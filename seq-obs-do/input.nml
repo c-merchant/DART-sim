@@ -1,0 +1,40 @@
+&ensemble_manager_nml
+   /
+
+&model_nml
+   model_size        = 40,
+   forcing           = 8.00,
+   delta_t           = 0.05,
+   time_step_days    = 0,
+   time_step_seconds = 3600,
+   /
+
+&utilities_nml
+   termlevel      = 1,
+   module_details = .false.,
+   logfilename    = '/dev/null',
+   nmlfilename    = 'dart_log.nml',
+   write_nml      = 'none',
+   print_debug    = .false.,
+   /
+
+&mpi_utilities_nml
+   /
+
+&preprocess_nml
+   overwrite_output        = .true.
+   input_obs_def_mod_file  = '/Users/hkershaw/DART/Projects/Sim/DART/observations/forward_operators/DEFAULT_obs_def_mod.F90'
+   output_obs_def_mod_file = '/Users/hkershaw/DART/Projects/Sim/DART/observations/forward_operators/obs_def_mod.f90'
+   input_obs_qty_mod_file  = '/Users/hkershaw/DART/Projects/Sim/DART/assimilation_code/modules/observations/DEFAULT_obs_kind_mod.F90'
+   output_obs_qty_mod_file = '/Users/hkershaw/DART/Projects/Sim/DART/assimilation_code/modules/observations/obs_kind_mod.f90'
+   obs_type_files          = '/Users/hkershaw/DART/Projects/Sim/DART/observations/forward_operators/obs_def_1d_state_mod.f90'
+   quantity_files          = '/Users/hkershaw/DART/Projects/Sim/DART/assimilation_code/modules/observations/oned_quantities_mod.f90'
+   /
+
+&state_vector_io_nml
+   /
+
+&quality_control_nml
+   input_qc_threshold       =  3.0,
+   outlier_threshold        = -1.0,
+   /
