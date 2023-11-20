@@ -51,4 +51,6 @@ program broadcaster
   deallocate(buffer)
 
   call mpi_finalize(ierr)
+
+  print *, 'END OF RUN'
 end program broadcaster
